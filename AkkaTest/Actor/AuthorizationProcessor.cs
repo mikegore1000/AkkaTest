@@ -14,7 +14,7 @@ namespace AkkaTest.Actor
             Receive<AuthorizePayment>(async p =>
             {
                 await Task.Delay(TimeSpan.FromMilliseconds(rand.Next(500, 1000)));
-                Console.WriteLine($"Authorized payment {p.PaymentReference}");
+                Console.WriteLine($"Authorized payment {p.PaymentReference} for {p.Amount.Value:F} {p.Amount.Currency}");
             });
         }
     }

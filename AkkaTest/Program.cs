@@ -24,7 +24,7 @@ namespace AkkaTest
 
             for (int i = 0; i < workloadSize; i++)
             {
-                distributor.Tell(new AuthorizePayment(Guid.NewGuid(), new Amount(100, Currency.GBP)));
+                distributor.Tell(new AuthorizePayment(i, new Amount(100, Currency.GBP)));
             }
 
             WriteLine($"Successfully sent {workloadSize} payments for authorization.");
